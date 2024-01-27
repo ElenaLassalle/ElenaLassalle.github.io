@@ -62,11 +62,11 @@
   --eerie-black-2: hsla(240, 98%, 50%, 0.185);
   --smoky-black: hsla(237, 100%, 50%, 0.226);
   --white-1: rgba(30, 30, 241, 0.404);
-  --white-2: rgba(0, 0, 250, 0.37);
+  --white-2: rgb(23, 23, 105);
   --orange-yellow-crayola: hsl(0, 93%, 58%);
   --vegas-gold: hsl(0, 100%, 50%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --light-gray: hsla(0, 0%, 84%, 0.736);
+  --light-gray-70: hsla(0, 0%, 84%, 0.4);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
   /**
