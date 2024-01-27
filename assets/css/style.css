@@ -56,11 +56,11 @@
 
   /* solid */
 
-  --jet: hsla(243, 99%, 50%, 0.577);
+  --jet: hsla(243, 99%, 50%, 0.237);
   --onyx: hsla(240, 100%, 50%, 0.307);
   --eerie-black-1: hsla(240, 98%, 50%, 0.185);
   --eerie-black-2: hsla(240, 98%, 50%, 0.185);
-  --smoky-black: hsla(237, 100%, 50%, 0.537);
+  --smoky-black: hsla(237, 100%, 50%, 0.226);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(0, 93%, 58%);
