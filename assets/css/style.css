@@ -61,8 +61,8 @@
   --eerie-black-1: hsla(240, 98%, 50%, 0.185);
   --eerie-black-2: hsla(240, 98%, 50%, 0.185);
   --smoky-black: hsla(237, 100%, 50%, 0.226);
-  --white-1: hsla(240, 88%, 53%, 1);
-  --white-2: hsla(240, 100%, 49%, 1);
+  --white-1: rgba(30, 30, 241, 0.404);
+  --white-2: rgba(0, 0, 250, 0.37);
   --orange-yellow-crayola: hsl(0, 93%, 58%);
   --vegas-gold: hsl(0, 100%, 50%);
   --light-gray: hsl(0, 0%, 84%);
