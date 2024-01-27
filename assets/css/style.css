@@ -32,7 +32,7 @@
     to bottom right, 
     hsla(240, 72%, 50%, 0.8) 0%, 
     hsla(240, 100%, 50%, 0) 100%
-  ), hsl(240, 100%, 48%);
+  ), hsla(240, 100%, 48%, 0);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
     hwb(350 2% 0%) 0%, 
