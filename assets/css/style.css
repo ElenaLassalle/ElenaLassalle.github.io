@@ -25,14 +25,14 @@
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(240, 81%, 75%) 3%, 
-    hsl(249, 100%, 75%) 97%
+    hsl(240, 31%, 41%) 3%, 
+    hsl(0, 0%, 19%) 97%
   );
   --bg-gradient-jet: linear-gradient(
     to bottom right, 
-    hsl(240, 100%, 75%) 0%, 
-    hsl(240, 100%, 78%) 100%
-  ), hsl(240, 96%, 80%);
+    hsla(240, 69%, 58%, 0.708) 0%, 
+    hsla(240, 87%, 52%, 0) 100%
+  ), hsla(240, 100%, 48%, 0);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
     hwb(350 2% 0%) 0%, 
