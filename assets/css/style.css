@@ -59,7 +59,7 @@
   --jet: hsl(244, 53%, 46%);  /* 2dn backgroung */
   --onyx: hsl(240, 100%, 77%);
   --eerie-black-1: hsl(240, 46%, 49%);
-  --eerie-black-2: hsl(240, 46%, 49%);
+  --eerie-black-2: hsl(240, 49%, 57%);
   --smoky-black: hsl(237, 55%, 43%);
   --white-1: rgb(16, 16, 72);
   --white-2: rgb(12, 12, 51);
@@ -155,7 +155,7 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: hsl(240, 100%, 77%); }
+body { background: hsl(240, 100%, 86%); }
 
 
 
