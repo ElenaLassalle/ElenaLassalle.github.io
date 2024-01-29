@@ -932,19 +932,19 @@ main {
 
 .select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
 
-/*.project-list {
+.project-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
   margin-bottom: 10px;
-}*/
+}
 
 .project-item { display: none; }
 
-/*.project-item.active {
+.project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
-}*/
+}
 
 @keyframes scaleUp {
   0% { transform: scale(0.5); }
