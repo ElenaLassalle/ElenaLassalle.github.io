@@ -941,10 +941,10 @@ main {
 
 .project-item { display: none; }
 
-.project-item.active {
+/*.project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
-}
+}*/
 
 @keyframes scaleUp {
   0% { transform: scale(0.5); }
