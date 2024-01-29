@@ -732,7 +732,7 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Phase 0</button>
+                <button data-select-item>get_min_maxspeed</button>
               </li>
 
               <li class="select-item">
@@ -781,14 +781,6 @@
                 const int speed_clamp = max_speed / 6;
                 const int speed_right = speed_move_default;
                 const int speed_left = speed_move_default;
-            
-                // Action 0: Turn to 45° the right
-                // Action 1: starting position -> wall, turn to start orientation
-                // Action 2: wall right -> wall other side, turn 90° to the left
-                // Action 3: move straigh while closing the clamp, turn 90° to the left
-                // Action 4: Speed to our camp, turn 90° to the left
-                // Action 5: Move forward, open clamp
-                // Action 10: Did not found the flag during action 3, go back to the other side and try again
             
                 /* Here are the angle the robot should follow for all phases */
                 // const float gyro_val_start = turn_until_min(speed_clamp, DEFAULT_TIME);
@@ -945,11 +937,36 @@
             
           </div>
 
-          <div class="project-item" data-filter-item data-category="phase 0" >
-            <h4 class="h4 timeline-item-title">Phase 0</h4>
-            <p>
-              test v,pob,fopbnprfbnronporfb, olb ,o,b opn
-            </p>
+          <div class="project-item" data-filter-item data-category="get_min_maxspeed" >
+            <h4 class="h4 timeline-item-title">get_min_maxspeed</h4>
+            <pre>
+              /**
+              * @brief Get the minimum of the maximum speed the motors can run at
+              * 
+              * @param sn_1 the first motor
+              * @param sn_2 the second motor
+              * @param sn_3 the thrid motor
+              * @return int the speed (< 0 if error)
+              */
+             int get_min_maxspeed(uint8_t sn_1, uint8_t sn_2, uint8_t sn_3) {
+                 int max_speed;
+                 int temp;
+                 if (get_tacho_max_speed(sn_1, &max_speed) == 0) {
+                     printf("Could not read the maximum speed for first arg\n");
+                     max_speed = -1;
+                 }
+                 if (get_tacho_max_speed(sn_2, &temp) == 0) {
+                     printf("Could not read the maximum speed for second arg\n");
+                     max_speed = -2;
+                 }
+                 max_speed = MIN(max_speed, temp);
+                 if (get_tacho_max_speed(sn_3, &temp) == 0) {
+                     printf("Could not read the maximum speed for third arg\n");
+                     max_speed = -3;
+                 }
+                 return MIN(max_speed, temp);
+             }
+            </pre>
 
           </div>
 
