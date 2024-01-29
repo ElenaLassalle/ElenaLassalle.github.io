@@ -763,7 +763,10 @@
           <div class="project-item active" data-filter-item data-phase="main" >
             <!-- Content for Phase 1 -->
             <h3 class="h3 form-title active">Main</h3>
-
+            <p>
+              This is a non exhausitiv part of our code. You can find the full version of it here:
+              <a href="https://gitlab.eurecom.fr/gasc/os-project" target="_blank"></a>
+            </p>
             <pre class="timeline-text">
               int main(void) {
                 int status;
@@ -794,7 +797,8 @@
             
                 float ref_angle_fourth_phase = fourth_angle;
             
-                printf("%f, %f, %f, %f, %f, %f\n", gyro_val_start, first_angle, second_angle, third_angle, fourth_angle, fifth_angle);
+                printf("%f, %f, %f, %f, %f, %f\n", gyro_val_start, first_angle, second_angle,
+                 third_angle, fourth_angle, fifth_angle);
             
                 float sonar = 0;
                 bool quit = false;
@@ -1083,7 +1087,8 @@ void move_straight(int speed_default, int time, float default_gyro) {
 *
 * @note The function does not take any parameters.
 *
-* @return const char* The color corresponding to the sensor value, or the first color in the array if the sensor is not connected or the sensor value is invalid.
+* @return const char* The color corresponding to the sensor value, or the first color in the array if the sensor 
+is not connected or the sensor value is invalid.
 */
 int get_color_from_sensor(void) {
    int val = 0;
