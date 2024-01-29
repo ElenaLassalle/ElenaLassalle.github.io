@@ -654,182 +654,160 @@
           <h2 class="h2 article-title">Source code</h2>
         </header>
 
-        <section class="blog-posts">
+        <section class="timeline">
 
-          <ul class="blog-posts-list">
+          <ul class="filter-list">
 
-            <li class="blog-post-item">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Phase 0</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Phase 1</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Phase 2</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Phase 3</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Phase 4</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Phase 5</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Phase 0</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Phase 1</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Phase 2</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Phase 3</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Phase 4</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Phase 5</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="phase 0">
               <a href="#">
+                <h4 class="h4 timeline-item-title">Phase 0</h4>
+                <p class="timeline-text">
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
+                  Using the gyroscope, the robot turns until it has reached the starting angle + 45°
+                </p>
 
               </a>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+            
+            <li class="project-item active" data-filter-item data-category="phase 1">
+              <h4 class="h4 timeline-item-title">Phase 1</h4>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
+                <p class="timeline-text">
+                  The robot moves forward until it is at a certain distance from the wall (detected using the sonar) 
+                  and then turns back to the angle of its strating position.
+                </p>
 
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
+              
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="phase 2">
+              <h4 class="h4 timeline-item-title">Phase 2</h4>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
+                <p class="timeline-text">
+                  The robot moves forward until it is at a certain distance from the wall (detected using the sonar) 
+                  and then turns back to the angle of its starting position and moves forward.
+                  If it encounters an obstacle that is not the wall, it will bypass it by going to the
+                  other side of the arena and coming back to the original side a bit farther away.
+                </p>
 
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
+              
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="phase 3">
+              <h4 class="h4 timeline-item-title">Phase 3</h4>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
+                <p class="timeline-text">
+                  Once the robot is close enough to the wall, it turns at a 90° angle and opens the clamp.
+                  It moves forward until it is within range of the flag and then closes the clamp. 
+                  Once it's out of the range of the flag, the robot moves forward until it's close to the wall 
+                  and turns another 90°.
+                </p>
 
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="phase 4">
+              <h4 class="h4 timeline-item-title">Phase 4</h4>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
+                <p class="timeline-text">
+                  The robot goes back to its starting camp by going forward. If it encounters an obstacle,
+                  it bypasses it by simply going to the other side and then continuing to the camp.
+                </p>
 
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="phase 5">
+              <h4 class="h4 timeline-item-title">Phase 5</h4>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
+                <p class="timeline-text">
+                  Once the robot reaches the wall, it turns so the clamp is within the camp. 
+                  It opens the clamp and turns to release the flag.
+                </p>
 
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
             </li>
 
           </ul>
 
         </section>
-
+        
       </article>
 
 
