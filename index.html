@@ -696,11 +696,11 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Phase 2</button>
+              <button data-filter-btn>bypass_obstacle</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Phase 3</button>
+              <button data-filter-btn>bypass_back</button>
             </li>
 
             <li class="filter-item">
@@ -740,11 +740,11 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Phase 2</button>
+                <button data-select-item>bypass_obstacle</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Phase 3</button>
+                <button data-select-item>bypass_back</button>
               </li>
 
               <li class="select-item">
@@ -996,7 +996,78 @@ void move_straight(int speed_default, int time, float default_gyro) {
 
         </div>
       
+        <div class="project-item" data-filter-item data-category="bypass_obstacle" >
+          <h4 class="h4 timeline-item-title">bypass_obstacle</h4>
+          <pre class="timeline-text">
+            void bypass_obstacle(int speed, float reference_angle, bool obstacle) {
+              printf("%d\n", obstacle);
+              time_t now;
+              time_t start_1 = time(&now);
+              if (obstacle) {
+                  while(start_1 + 2 > now){
+                      move_straight(-speed, DEFAULT_TIME, reference_angle);
+                      time(&now);
+                  }
+              }
+              turn_to(speed, reference_angle - 90, 1);
+              update_sonar();
+              while (val_sonar >= 250) {
+                  move_straight(2 * speed, DEFAULT_TIME, reference_angle - 90);
+                  update_sonar();
+              }
+              turn_to(speed, reference_angle, 1);
+              time_t start_2 = time(NULL);
+              if (obstacle){
+                  while (start_2 + 2 > now) {
+                      move_straight(2 * speed, DEFAULT_TIME, reference_angle);
+                      time(&now);
+                  }
+              } else {
+                  while (start_2 + 1 > now) {
+                      move_straight(2 * speed, DEFAULT_TIME, reference_angle);
+                      time(&now);
+                  }
+              }
+              turn_to(speed, reference_angle + 90, 1);
+              update_sonar();
+              while (val_sonar >= 250) {
+                  move_straight(2 * speed, DEFAULT_TIME, reference_angle + 90);
+                  update_sonar();
+              }
+              turn_to(speed, reference_angle, 1);
+          }
+</pre>
+        </div>          
 
+        <div class="project-item" data-filter-item data-category="bypass_back" >
+          <h4 class="h4 timeline-item-title">bypass_back</h4>
+          <pre class="timeline-text">
+            void bypass_back(int speed, float reference_angle, bool obstacle) {
+              // Sleep(3000);
+              // update_sonar();
+              // if (val_sonar >= 200) {
+              //     printf("There is no opponent\n");
+              //     return;
+              // }
+              printf("%d\n", obstacle);
+              time_t now;
+              time_t start_1 = time(&now);
+              if (obstacle) {
+                  while(start_1 + 2 > now){
+                      move_straight(-2 * speed, DEFAULT_TIME, reference_angle);
+                      time(&now);
+                  }
+              }
+              turn_to(speed, reference_angle - 90, 1);
+              update_sonar();
+              while (val_sonar >= 300) {
+                  move_straight(2 * speed, DEFAULT_TIME, reference_angle - 90);
+                  update_sonar();
+              }
+              turn_to(speed, reference_angle, 1);  
+          }
+          </pre>
+        </div>
       </article>
 
 
