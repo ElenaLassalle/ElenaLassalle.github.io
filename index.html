@@ -666,89 +666,39 @@
           <h2 class="h2 article-title">Source code</h2>
         </header>
 
-        <section class="timeline">
+        <nav class="navbar">
 
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button data-filter-btn>Main</button>
+          <ul class="navbar-list">
+  
+            <li class="navbar-item">
+              <button class="navbar-link  active" data-nav-link>Main</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Phase 0</button>
+  
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Architecture</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Phase 1</button>
+  
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Algorithms</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Phase 2</button>
+  
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Source code</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Phase 3</button>
+  
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Videos</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Phase 4</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Phase 5</button>
-            </li>
-
+  
           </ul>
+  
+        </nav>
 
-          <div class="filter-select-box">
+        <article class="main  active" data-page="main">
 
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>Main</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Phase 0</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Phase 1</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Phase 2</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Phase 3</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Phase 4</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Phase 5</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="main">
+          <header>
+            <h2 class="h2 article-title">Main</h2>
+          </header>
               <pre><code class="language-c">
                 int main(void) {
                   int status;
@@ -926,66 +876,8 @@
                     Prism.highlightAll();
                 });
             </script>
-            </li>
-
             
-            <li class="project-item" data-category="phase 1">
-              <h4 class="h4 timeline-item-title">Phase 1</h4>
-
-                <p class="timeline-text">
-                  The robot moves forward until it is at a certain distance from the wall (detected using the sonar) 
-                  and then turns back to the angle of its strating position.
-                </p>
-
-              
-            </li>
-
-            <li class="project-item" data-filter-item data-category="phase 2">
-              <h4 class="h4 timeline-item-title">Phase 2</h4>
-
-                <p class="timeline-text">
-                  The robot moves forward until it is at a certain distance from the wall (detected using the sonar) 
-                  and then turns back to the angle of its starting position and moves forward.
-                  If it encounters an obstacle that is not the wall, it will bypass it by going to the
-                  other side of the arena and coming back to the original side a bit farther away.
-                </p>
-
-              
-            </li>
-
-            <li class="project-item" data-filter-item data-category="phase 3">
-              <h4 class="h4 timeline-item-title">Phase 3</h4>
-
-                <p class="timeline-text">
-                  Once the robot is close enough to the wall, it turns at a 90° angle and opens the clamp.
-                  It moves forward until it is within range of the flag and then closes the clamp. 
-                  Once it's out of the range of the flag, the robot moves forward until it's close to the wall 
-                  and turns another 90°.
-                </p>
-
-            </li>
-
-            <li class="project-item" data-filter-item data-category="phase 4">
-              <h4 class="h4 timeline-item-title">Phase 4</h4>
-
-                <p class="timeline-text">
-                  The robot goes back to its starting camp by going forward. If it encounters an obstacle,
-                  it bypasses it by simply going to the other side and then continuing to the camp.
-                </p>
-
-            </li>
-
-            <li class="project-item" data-filter-item data-category="phase 5">
-              <h4 class="h4 timeline-item-title">Phase 5</h4>
-
-                <p class="timeline-text">
-                  Once the robot reaches the wall, it turns so the clamp is within the camp. 
-                  It opens the clamp and turns to release the flag.
-                </p>
-
-            </li>
-
-          </ul>
+          </article>
 
         </section>
 
