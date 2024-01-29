@@ -704,7 +704,7 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Phase 4</button>
+              <button data-filter-btn>get_color_from_sensor</button>
             </li>
 
             <li class="filter-item">
@@ -748,7 +748,7 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Phase 4</button>
+                <button data-select-item>get_color_from_sensor</button>
               </li>
 
               <li class="select-item">
@@ -762,7 +762,7 @@
 
           <div class="project-item active" data-filter-item data-phase="main" >
             <!-- Content for Phase 1 -->
-            <h3 class="h3 form-title active">Main code</h3>
+            <h3 class="h3 form-title active">Main</h3>
 
             <pre class="timeline-text">
               int main(void) {
@@ -1068,6 +1068,39 @@ void move_straight(int speed_default, int time, float default_gyro) {
           }
           </pre>
         </div>
+
+        <div class="project-item" data-filter-item data-category="get_color_from_sensor" >
+          <h4 class="h4 timeline-item-title">get_color_from_sensor</h4>
+          <pre class="timeline-text">
+            
+/**
+* @brief Retrieves the color from a sensor.
+*
+* This function checks if a LEGO EV3 color sensor is connected. If it is, it retrieves the sensor value.
+* If the sensor value is not retrievable, or if it is outside the valid range (0 to COLOR_COUNT-1), it defaults to 0.
+* It then returns the color corresponding to the sensor value from the color array.
+* If the sensor is not connected, it returns the first color in the color array.
+*
+* @note The function does not take any parameters.
+*
+* @return const char* The color corresponding to the sensor value, or the first color in the array if the sensor is not connected or the sensor value is invalid.
+*/
+int get_color_from_sensor(void) {
+   int val = 0;
+
+   if (ev3_search_sensor(LEGO_EV3_COLOR, &sn_color, 0)) {
+       if (!get_sensor_value(0, sn_color, &val) || (val < 0) || (val >= COLOR_COUNT)) {
+           val = 0;
+       }
+   }
+   return val;
+   // return color[val];
+}
+
+</pre>
+</div>
+
+            
       </article>
 
 
