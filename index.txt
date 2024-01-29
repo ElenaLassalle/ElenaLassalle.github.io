@@ -23,10 +23,10 @@ Sacramento, California, USA
 # navbar
 
 About
-Resume
-Portfolio
-Blog
-Contact
+Architecture
+Algorithms
+Source code
+Videos
 
 # about
 
