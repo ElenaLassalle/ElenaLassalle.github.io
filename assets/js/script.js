@@ -158,20 +158,31 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+// ... (Your existing code)
+
 // Secondary navigation bar variables
 const secondaryNavbar = document.querySelector("[data-secondary-navbar]");
 const secondaryNavbarLinks = document.querySelectorAll("[data-secondary-nav-link]");
+const contentPages = document.querySelectorAll(".content .page");
 
 // Function to toggle secondary navbar visibility
 const toggleSecondaryNavbar = function () {
   secondaryNavbar.classList.toggle("active");
 }
 
+// Function to handle secondary navbar link clicks
+const handleSecondaryNavbarLinkClick = function (targetPage) {
+  for (let i = 0; i < contentPages.length; i++) {
+    contentPages[i].classList.remove("active");
+  }
+  document.querySelector(`.content .page[data-page="${targetPage}"]`).classList.add("active");
+}
+
 // Add click event listeners to secondary navbar links
 for (let i = 0; i < secondaryNavbarLinks.length; i++) {
   secondaryNavbarLinks[i].addEventListener("click", function () {
-    // Implement the behavior for secondary navbar links
-    // You can add logic to switch between different sections/categories
+    const targetPage = this.innerText.toLowerCase().replace(/\s/g, '-');
+    handleSecondaryNavbarLinkClick(targetPage);
   });
 }
 
@@ -179,4 +190,8 @@ for (let i = 0; i < secondaryNavbarLinks.length; i++) {
 const sourceCodeLink = document.querySelector("[data-nav-link='Source code']");
 sourceCodeLink.addEventListener("click", function () {
   toggleSecondaryNavbar();
+  // Handle additional behavior when "Source code" link is clicked
+  handleSecondaryNavbarLinkClick('source-code');
 });
+
+
