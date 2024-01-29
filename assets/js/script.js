@@ -86,7 +86,10 @@ const filterFunc = function (selectedValue) {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
       filterItems[i].classList.add("active");
-    } else {
+    } else if (selectedValue === "main"){
+      filterItems[i].classList.add("active");
+    } 
+    else {
       filterItems[i].classList.remove("active");
     }
 
