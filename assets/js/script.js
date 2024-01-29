@@ -157,3 +157,26 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Secondary navigation bar variables
+const secondaryNavbar = document.querySelector("[data-secondary-navbar]");
+const secondaryNavbarLinks = document.querySelectorAll("[data-secondary-nav-link]");
+
+// Function to toggle secondary navbar visibility
+const toggleSecondaryNavbar = function () {
+  secondaryNavbar.classList.toggle("active");
+}
+
+// Add click event listeners to secondary navbar links
+for (let i = 0; i < secondaryNavbarLinks.length; i++) {
+  secondaryNavbarLinks[i].addEventListener("click", function () {
+    // Implement the behavior for secondary navbar links
+    // You can add logic to switch between different sections/categories
+  });
+}
+
+// Add an event listener to the "Source code" link in the primary navbar
+const sourceCodeLink = document.querySelector("[data-nav-link='Source code']");
+sourceCodeLink.addEventListener("click", function () {
+  toggleSecondaryNavbar();
+});
