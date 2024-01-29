@@ -688,11 +688,11 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>get_min_maxspeed</button>
+              <button data-filter-btn>move_straight</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Phase 1</button>
+              <button data-filter-btn>turn_to</button>
             </li>
 
             <li class="filter-item">
@@ -732,11 +732,11 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>get_min_maxspeed</button>
+                <button data-select-item>move_straight</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Phase 1</button>
+                <button data-select-item>turn_to</button>
               </li>
 
               <li class="select-item">
@@ -762,7 +762,7 @@
 
           <div class="project-item active" data-filter-item data-phase="main" >
             <!-- Content for Phase 1 -->
-            <h3 class="h3 form-title">Main code</h3>
+            <h3 class="h3 form-title active">Main code</h3>
 
             <pre class="timeline-text">
               int main(void) {
@@ -937,41 +937,64 @@
             
           </div>
 
-          <div class="project-item" data-filter-item data-category="get_min_maxspeed" >
-            <h4 class="h4 timeline-item-title">get_min_maxspeed</h4>
+          <div class="project-item" data-filter-item data-category="move_straight" >
+            <h4 class="h4 timeline-item-title">move_straight</h4>
             <pre class="timeline-text">
-              /**
-              * @brief Get the minimum of the maximum speed the motors can run at
-              * 
-              * @param sn_1 the first motor
-              * @param sn_2 the second motor
-              * @param sn_3 the thrid motor
-              * @return int the speed (< 0 if error)
-              */
-             int get_min_maxspeed(uint8_t sn_1, uint8_t sn_2, uint8_t sn_3) {
-                 int max_speed;
-                 int temp;
-                 if (get_tacho_max_speed(sn_1, &max_speed) == 0) {
-                     printf("Could not read the maximum speed for first arg\n");
-                     max_speed = -1;
-                 }
-                 if (get_tacho_max_speed(sn_2, &temp) == 0) {
-                     printf("Could not read the maximum speed for second arg\n");
-                     max_speed = -2;
-                 }
-                 max_speed = MIN(max_speed, temp);
-                 if (get_tacho_max_speed(sn_3, &temp) == 0) {
-                     printf("Could not read the maximum speed for third arg\n");
-                     max_speed = -3;
-                 }
-                 return MIN(max_speed, temp);
-             }
+              
+/**
+* @brief Move the robot in a straigh line accoring to gyro_ref
+* 
+* @param speed_default the baseline speed
+* @param time the time the motor should turn
+* @param gyro_ref the value of reference for the gyroscope
+*/
+void move_straight(int speed_default, int time, float default_gyro) {
+   float speed_left;
+   float speed_right;
+
+   update_gyro();
+   int diff = (int) (default_gyro - gyro_now) % 360;
+   if (diff != 0) {
+       float mul = 1 + (float) abs(diff) / 5;
+       if (diff > 0) {
+           speed_left  = mul * speed_default;
+           speed_right = 1.0 * speed_default;
+       } else if (diff < 0) {
+           speed_left  = 1.0 * speed_default;
+           speed_right = mul * speed_default;
+       }
+       // printf("%f, %f, %f\n", mul, speed_left, speed_right);
+   } else {
+       speed_right = speed_default;
+       speed_left  = speed_default;
+   }
+   move_forward(speed_left, speed_right, time);
+}
             </pre>
 
           </div>
 
-        
+          <div class="project-item" data-filter-item data-category="turn_to" >
+            <h4 class="h4 timeline-item-title">turn_to</h4>
+            <pre class="timeline-text">
+              void turn_to(int speed, float gyro_ref, int marge) {
+                int gyro_now = update_gyro();
+                bool quit = false;
+                float diff;
+                while (!quit) {
+                    diff = gyro_ref - gyro_now;
+                    if (diff > 0) {
+                        turn_right(speed, DEFAULT_TIME);
+                    } else if (diff < 0) {
+                        turn_left(speed, DEFAULT_TIME);
+                    }
+                    gyro_now = update_gyro();
+                    quit = (gyro_ref - marge <= gyro_now) && (gyro_now <= gyro_ref + marge);
+                }
+            }
+          </pre>
 
+        </div>
       
 
       </article>
