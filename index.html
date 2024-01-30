@@ -1167,15 +1167,18 @@ int get_color_from_sensor(void) {
       $make
 
       If you get an output like 
-"""
-...
-make[1]: * ** ev3dev-c: No such file or directory.  Stop.
-makefile:27: recipe for target 'ev3dev-c/lib/libev3dev-c.a' failed
-make: * ** [ev3dev-c/lib/libev3dev-c.a] Error 2
-make: * ** [makefile:16: build-docker] Error 2
-"""
-then it means you need to clone the ev3dev-c repository. Don't panic, you can do that using "git submodule update --init --recursive".
-You can then confidently use make again.
+
+      """
+      ...
+      make[1]: * ** ev3dev-c: No such file or directory.  Stop.
+      makefile:27: recipe for target 'ev3dev-c/lib/libev3dev-c.a' failed
+      make: * ** [ev3dev-c/lib/libev3dev-c.a] Error 2
+      make: * ** [makefile:16: build-docker] Error 2
+      """
+
+      Then it means you need to clone the ev3dev-c repository. Don't panic, you can do that using 
+      "git submodule update --init --recursive".
+      You can then confidently use make again.
 
     </pre>
 
