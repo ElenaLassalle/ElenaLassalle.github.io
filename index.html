@@ -775,7 +775,7 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Full code</button>
+              <button data-filter-btn>Additional info</button>
 
             </li>
 
@@ -820,7 +820,7 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Full code</button>
+                <button data-select-item>Additional infoe</button>
               </li>
 
             </ul>
@@ -1152,7 +1152,22 @@ int get_color_from_sensor(void) {
 </pre>
 </div>
 
-<div class="project-item" data-filter-item data-category="full code" >
+<div class="project-item" data-filter-item data-category="additional info" >
+
+  <h4 class="h4 timeline-item-title">Instructions</h4>
+
+  <p class="timeline-text">
+    To compile the code, you need to create a docker container of ev3dev stretch, tag it as ev3cc 
+    and just use make as we have used a Makefile.
+    
+    <pre>
+      docker pull ev3dev/debian-stretch-cross
+      docker tag ev3dev/debian-stretch-cross ev3cc
+      make
+    </pre>
+
+  </p>
+
   <h4 class="h4 timeline-item-title">Full code</h4>
   <p class="timeline-text">
     The code provided here is not exhaustive. You can find it in its entirety at this address :
