@@ -310,7 +310,7 @@
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
                     I participated in this project by buildingt the robot. I also worked on the phases
-                    2 and 4 of the code. Finally I did the website.                  </p>
+                    2 and 4 of the code on the bypass funtion and its use. Finally I did the website.                  </p>
                 </div>
 
               </div>
@@ -994,13 +994,6 @@
             <h4 class="h4 timeline-item-title">move_straight</h4>
             <pre class="timeline-text">
               
-/**
-* @brief Move the robot in a straigh line accoring to gyro_ref
-* 
-* @param speed_default the baseline speed
-* @param time the time the motor should turn
-* @param gyro_ref the value of reference for the gyroscope
-*/
 void move_straight(int speed_default, int time, float default_gyro) {
    float speed_left;
    float speed_right;
@@ -1126,19 +1119,6 @@ void move_straight(int speed_default, int time, float default_gyro) {
           <h4 class="h4 timeline-item-title">get_color_from_sensor</h4>
           <pre class="timeline-text">
             
-/**
-* @brief Retrieves the color from a sensor.
-*
-* This function checks if a LEGO EV3 color sensor is connected. If it is, it retrieves the sensor value.
-* If the sensor value is not retrievable, or if it is outside the valid range (0 to COLOR_COUNT-1), it defaults to 0.
-* It then returns the color corresponding to the sensor value from the color array.
-* If the sensor is not connected, it returns the first color in the color array.
-*
-* @note The function does not take any parameters.
-*
-* @return const char* The color corresponding to the sensor value, or the first color in the array if the sensor 
-is not connected or the sensor value is invalid.
-*/
 int get_color_from_sensor(void) {
    int val = 0;
 
