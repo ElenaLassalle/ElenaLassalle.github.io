@@ -1164,10 +1164,15 @@ int get_color_from_sensor(void) {
 
       $docker pull ev3dev/debian-stretch-cross
       $docker tag ev3dev/debian-stretch-cross ev3cc
-      $make
+      $make </pre>
+
+      <p class="timeline-text">
 
       If you get an output like 
 
+      </p>
+
+      <pre class="timeline-text">
       """
       ...
       make[1]: * ** ev3dev-c: No such file or directory.  Stop.
@@ -1176,13 +1181,15 @@ int get_color_from_sensor(void) {
       make: * ** [makefile:16: build-docker] Error 2
       """
 
+    </pre>
+
+    <p class="timeline-text">
+
       Then it means you need to clone the ev3dev-c repository. Don't panic, you can do that using 
       "git submodule update --init --recursive".
       You can then confidently use make again.
 
-    </pre>
-
-    
+    </p>   
 
   </p>
 
